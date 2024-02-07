@@ -1,23 +1,19 @@
-import React from 'react';
-import Task1 from "./lab1/task1";
-import Task2 from "./lab1/task2";
-import Task3 from "./lab1/task3";
-import Task4 from "./lab1/task4";
-import Task5 from "./lab1/task5";
-import Task6 from "./lab1/task6";
-import Task7 from "./lab1/task7";
+import Index from "./KRYPT_lab6/route";
+import Task1 from "./KRYPT_lab6/task1";
+import Task2 from "./KRYPT_lab6/task2";
+import Task3 from "./KRYPT_lab6/task3";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
-      <div>
-        <Task1/>
-        <Task2/>
-        <Task3/>
-        <Task4/>
-        <Task5/>
-        <Task6/>
-        <Task7/>
-      </div>
-  )
-}
+    <Router>
+      <Routes>
+      <Route exact path="/" element={<Index />} />
+        <Route exact path="/task1" element={<Task1 />} />
+        <Route path="/task2" element={<Task2 />} />
+        <Route path="/task3" element={<Task3 />} />
+      </Routes>
+    </Router>
+  );
+};
 export default App;
